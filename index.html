@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment No 5</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-green-50">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <div class="text-xl font-bold text-green-800 flex items-center gap-2">
+      <div class="w-[38px]"><img src="B12-A5-Emergency-Hotline/assets/logo.png" alt="" srcset="" ></div>
+      <div class="text-sm "> Emergency <br> Service</div>
+    </div>
+    <div class="flex items-center gap-[8px] text-lg">
+      <div class="flex bg-green-100 rounded-[50px] w-[90px] h-[30px]  flex justify-center gap-[4px]">
+         <div><span id="heartCount" class="font-semibold">0</span></div>
+        <div class="mt-[1px]"> <img src="B12-A5-Emergency-Hotline/assets/heart.png" alt="" srcset="" class="h-[22px] w-[22px] mt-[3px]"> </div>
+      </div>
+      <div class="flex bg-green-100 rounded-[50px] w-[90px] h-[30px]  flex justify-center text-lg"><span><span id="coinCount" class="font-semibold">100</span> 💰 </span></div>
+      <span class="bg-green-600 rounded-[50px] w-[90px] h-[30px] flex justify-center text-white text-lg"><span id="copyCount">0 </span> Copy</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-green-600 to-green-900 text-white py-6 text-center">
+    <img src="B12-A5-Emergency-Hotline/assets/logo-dark.png" class="w-16 mx-auto mb-2" alt="Bangladesh Logo" />
+    <h1 class="text-3xl font-bold">Emergency Service Directory</h1>
+    <p class="mt-1 text-sm italic">Government Emergency Services at Your Fingertip – A Project by Government of the People's Republic of Bangladesh</p>
+  </section>
+
+  <!-- Main Section -->
+  <main class="p-4 grid grid-cols-1 md:grid-cols-4 gap-4">
+
+    <!-- Card Section -->
+    <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-[850px]" id="cardContainer">
+
+      <!-- Card 1 -->
+<div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/emergency.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">National Emergency Number</h3>
+  <p class="text-xs mt-[0px] p-[0px]">National Emergency</p></div>
+  <p class="text-black text-lg font-bold">999</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">All</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/police.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Police Helpline Number</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Police</p></div>
+  <p class="text-black text-lg font-bold">999</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Police</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/fire-service.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Fire Service Number</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Fire Service</p></div>
+  <p class="text-black text-lg font-bold">999</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Fire</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 4 -->
+<div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/ambulance.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Ambulance Service</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Ambulance</p></div>
+  <p class="text-black text-lg font-bold">1994-999999</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Health</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 5 -->
+<div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/emergency.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Women & Child Helpline</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Women & Child Helpline</p></div>
+  <p class="text-black text-lg font-bold">109</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Help</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 6 -->
+<div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/emergency.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Anti-Corruption Helpline</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Anti-Corruption</p></div>
+  <p class="text-black text-lg font-bold">106</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Govt</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 7 -->
+ <div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/emergency.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Electricity Helpline</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Electricity Outage</p></div>
+  <p class="text-black text-lg font-bold">16216</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Electricity</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 8 -->
+
+ <div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/emergency.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Brac Helpline</h3>
+  <p class="text-xs mt-[0px] p-[0px]">Brac</p></div>
+  <p class="text-black text-lg font-bold">16445</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">NGO</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+<!-- Card 9 -->
+
+ <div class="bg-white p-4 rounded shadow relative">
+
+  <div> <img src="B12-A5-Emergency-Hotline/assets/emergency.png" alt="" srcset="" class="w-[30px] mb-[15px] mt-[-8px]">
+    <button onclick="addHeart()" class="absolute top-2 right-2 text-red-500 text-xl">💗</button>
+  </div>
+  <div class="mb-[15px]"><h3 class="text-md font-bold">Bangladesh Railway Helpline </h3>
+  <p class="text-xs mt-[0px] p-[0px]">Bangladesh Railway</p></div>
+  <p class="text-black text-lg font-bold">163</p>
+  <span class="text-xs inline-block mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded">Travel</span>
+  <div class="flex gap-2 mt-4">
+    <button onclick="copyNumber('999')" class="bg-white border border-gray-200 px-3 py-1 rounded hover:bg-gray-300 w-[120px] text-sm">📋 Copy</button>
+    <button onclick="makeCall('National Emergency Number', '999')" class="bg-green-600 text-white px-3 py-1 rounded w-[120px] hover:bg-green-800 text-sm">📞 Call</button>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Call History Section -->
+    <div class="bg-white p-4 rounded shadow-md h-fit w-[340px] ml-[-45px]">
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="text-lg font-semibold">📞 Call History</h2>
+        <button onclick="clearHistory()" class="bg-green-600 text-white px-[2px] py-1 rounded-[50px] w-[90px] hover:bg-green-800 text-sm">Clear</button>
+      </div>
+      <ul id="callHistory" class="space-y-2 text-sm">
+      </ul>
+    </div>
+  </main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
