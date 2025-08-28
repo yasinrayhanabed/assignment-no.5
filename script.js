@@ -83,8 +83,6 @@ function clearHistory() {
   document.getElementById("callHistory").innerHTML = "";
 }
 
-function clearHistory() {
-  document.getElementById("callHistory").innerHTML = "";
-}
+
 
 
