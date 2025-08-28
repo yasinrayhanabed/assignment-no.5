@@ -64,7 +64,6 @@ function makeCall(name, number) {
 
   const callTime = new Date().toLocaleTimeString();
 
-  // এখানে card তৈরি হবে
   const historyCard = document.createElement("div");
   historyCard.className =
     "bg-white shadow-md rounded-lg p-3 mb-2 flex items-center justify-between";
@@ -74,7 +73,7 @@ function makeCall(name, number) {
       <p class="font-semibold text-gray-800">${name}</p>
       <p class="text-sm text-gray-500">${number} - ${callTime}</p>
     </div>
-    <span class="text-red-500 text-xl">📞</span>
+    <span class="text-red-500 text-xl"></span>
   `;
 
   document.getElementById("callHistory").appendChild(historyCard);
